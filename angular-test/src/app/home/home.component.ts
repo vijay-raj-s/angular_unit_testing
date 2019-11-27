@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private FixtureApi: ApiService) { }
 
   ngOnInit() {
+    this.FixtureApi.getFixtures().subscribe(response => {
+      console.log('Service response- ----------------------------');
+      console.log(response);
+      debugger;
+    })
   }
 
 }

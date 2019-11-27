@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { DataComponent } from './data/data.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+ 
 
 @NgModule({
   declarations: [
@@ -18,9 +20,10 @@ import { DataComponent } from './data/data.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
